@@ -7,7 +7,10 @@
           <%- JSON.stringify(theme.valine || {}) %>,
           {
             el: "#valine",
-            path: <%= theme.valine.path %>
+            path: <%= theme.valine.path %>,
+            master: "<%= theme.valine.master%>",
+            friends: "<%= theme.valine.friends%>",
+            tagMeta: ["博主","友人","访客"],
           }
         )
         new Valine(options);
