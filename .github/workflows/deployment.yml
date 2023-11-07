@@ -1,0 +1,27 @@
+name: Publish Hexo to gitpage
+on:
+  push:
+    branches:
+      - main  # 如果源码与gitpage用同一仓库则修改为hexo源码对应分支
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: main
+    - name: Install dependencies
+      run: |
+        npm install -g hexo-cli # 给虚拟机装上hexo运行环境
+        npm install             # 安装 package.json 中记录的所有插件
+    - name: Generate Hexo site
+      run: |
+        hexo clean
+        hexo generate
+    - name: Deploy to B repo
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        personal_token: ${{ secrets.ACCESS_TOKEN }} # Personal access token
+        external_repository: aikunzhe/aikunzhe.github.io  # 发布的仓库地址
+        PUBLISH_BRANCH: main
+        PUBLISH_DIR: ./public
