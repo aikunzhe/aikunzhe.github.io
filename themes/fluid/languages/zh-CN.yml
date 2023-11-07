@@ -28,6 +28,11 @@ about:
   title: '关于'
   subtitle: '关于'
 
+community:
+  menu: '社群'
+  title: '社群'
+  subtitle: '社群'
+
 links:
   menu: '友链'
   title: '友链'
