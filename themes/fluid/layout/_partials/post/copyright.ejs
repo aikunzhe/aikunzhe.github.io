@@ -11,8 +11,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div><%= page.title %></div>
-      <div><%= decode_url(page.permalink) %></div>
+      <strong>本文链接: </strong><%= page.title %> &nbsp;<a href="<%- decode_url(page.permalink) %>"><%- decode_url(page.permalink) %></a> <br>
+      <strong>版权声明: </strong><%- theme.post.copyright.content %>
     </div>
     <div class="license-meta">
       <% if (theme.post.copyright.author.enable && (page.author || config.author)) { %>
