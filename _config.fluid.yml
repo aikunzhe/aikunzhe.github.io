@@ -240,7 +240,7 @@ custom_css:
 # 网页访问统计
 # Analysis of website visitors
 web_analytics:  # 网页访问统计
-  enable: true
+  enable: false
 
   # 遵循访客浏览器"请勿追踪"的设置，如果开启则不统计其访问
   # Follow the "Do Not Track" setting of the visitor's browser
@@ -653,16 +653,17 @@ post:
 
     # CreativeCommons license
     # Options: BY | BY-SA | BY-ND | BY-NC | BY-NC-SA | BY-NC-ND
-    license: 'BY'
+    license: ''
+    content: '本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" alt="BY-NC-SA" title="BY-NC-SA" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！'
 
     # 显示作者
     author:
-      enable: true
+      enable: false
 
     # 显示发布日期
     # Show post date
     post_date:
-      enable: true
+      enable: false
       format: "LL"
 
     # 显示更新日期
@@ -808,6 +809,8 @@ valine:
   emojiCDN:
   emojiMaps:
   enableQQ: false
+  master: aa03fe062a68a50fb6914400adb8402a # 你邮箱的md5加密(百度md5在线加密)
+  friends: a9126a74dxxxx638def0b16025,0173939xxxxx32a8cffc288b046dc # 好友邮箱的md5加密
 
 # Waline
 # 从 Valine 衍生而来，额外增加了服务端和多种功能
@@ -1093,7 +1096,10 @@ static_prefix:
 
   mermaid: https://lib.baomitu.com/mermaid/8.14.0/
 
-  valine: https://lib.baomitu.com/valine/1.5.1/
+
+  #valine原版：https://lib.baomitu.com/valine/1.5.1/
+  #valine魔改版，可以显示标识：https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/
+  valine: https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/
 
   waline: https://cdn.staticfile.org/waline/2.15.5/
 
