@@ -416,7 +416,7 @@
             path: window.location.pathname,
             master: "aa03fe062a68a50fb6914400adb8402a",
             friends: "83227dac0bdcf38659e7ea5e7a05be64,0173939xxxxx32a8cffc288b046dc",
-            tagMeta: ["博主","友人","访客"],
+            tagMeta: ["博主","友人","小伙伴"],
           }
         )
         new Valine(options);
@@ -425,6 +425,14 @@
           Fluid.plugins.imageCaption(imgSelector);
           Fluid.plugins.fancyBox(imgSelector);
         })
+
+       fetch('https://v1.hitokoto.cn')
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById("veditor").setAttribute("placeholder",data.hitokoto+"__"+data.from);
+        })
+        .catch(console.error)
+       console.log("每日一句加载完成")
       });
     });
   </script>
